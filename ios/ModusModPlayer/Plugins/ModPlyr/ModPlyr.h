@@ -9,6 +9,7 @@
 #import <Cordova/CDV.h>
 
 #include "bass.h"
+#include "libmodplug.h"
 
 
 @interface ModPlyr : CDVPlugin {
@@ -35,6 +36,8 @@
 - (void) cordovaGetFilesForPath;
 
 - (void) cordovaLoadMod;
+// cordovaLoadModNew is for the libModPlug 
+- (void) cordovaLoadModNew;
 - (void) cordovaPlayMod;
 - (void) cordovaStopMusic;
 - (void) cordvoaGetWaveFormData;

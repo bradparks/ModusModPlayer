@@ -30,6 +30,8 @@ typedef void (*ModPlugMixerProc)(int*, unsigned long, unsigned long);
  * file, and [size] should be the size of that block.
  * Return the loaded mod file on success, or NULL on failure. */
 ModPlugFile* ModPlug_Load(const void* data, int size);
+
+
 /* Unload a mod file. */
 void ModPlug_Unload(ModPlugFile* file);
 
