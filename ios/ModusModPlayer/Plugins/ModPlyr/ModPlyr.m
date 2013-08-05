@@ -339,9 +339,11 @@
 }
 
 - (void) cordovaLoadModNew:(CDVInvokedUrlCommand*) command {
-    long *size = NULL;
+//    long *size = NULL;
     
-    unsigned char *d;
+    NSData *data;
+    NSUInteger size;
+    const void* d;
     
     
     ModPlug_Settings settings;
@@ -358,9 +360,11 @@
     NSString *file = [command.arguments objectAtIndex:0];
     ModPlugFile *f2;
     
-    d = [self getFileData:[file UTF8String]];
+    data = [self getFileData:file];
+    d = [data bytes];
+    size = [data length];
     
-    f2 = ModPlug_Load(d, *size);
+    f2 = ModPlug_Load(d, size);
   
     NSDictionary *jsonObj;
         
@@ -403,25 +407,20 @@
 
 
 
-- (unsigned char*) getFileData:(const char*)filename  {
-    FILE *f;
-    unsigned char *data;
-    long *size;
-
-    f = fopen(filename, "rb");
-    if (f == NULL) {
-      return NULL;
+- (NSData *) getFileData:(NSString*) filename  {    
+    NSFileHandle *file;
+    NSData *databuffer;
+    
+    file = [NSFileHandle fileHandleForReadingAtPath: filename];
+    if (file == nil) {
+        NSLog(@"Failed to open file");
     }
-    fseek(f, 0L, SEEK_END);
     
-    size = ftell(f);
-    rewind(f);
+    [file seekToFileOffset: 0];
+    databuffer = [file readDataToEndOfFile];
+    [file closeFile];
     
-    data = (char*)malloc(*size);
-    fread(data, *size, sizeof(char), f);
-    fclose(f);
-
-    return(data);
+    return databuffer;
 }
 
 
