@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ModusModPlayer/Plugins/ModPlyr/ModPlyr.m"
-         timestampString = "395978176.12348"
+         timestampString = "397415969.562232"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "438"
-         endingLineNumber = "438"
+         startingLineNumber = "435"
+         endingLineNumber = "435"
          landmarkName = "-cordovaLoadMod:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ModusModPlayer/Plugins/ModPlyr/ModPlyr.m"
-         timestampString = "395978176.12348"
+         timestampString = "397415969.562232"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "536"
-         endingLineNumber = "536"
+         startingLineNumber = "533"
+         endingLineNumber = "533"
          landmarkName = "-cordovaGetWaveFormData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ModusModPlayer/Plugins/ModPlyr/ModPlyr.m"
-         timestampString = "395978176.12348"
+         timestampString = "397415969.562232"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "537"
-         endingLineNumber = "537"
+         startingLineNumber = "534"
+         endingLineNumber = "534"
          landmarkName = "-cordovaGetWaveFormData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ModusModPlayer/Plugins/ModPlyr/ModPlyr.m"
-         timestampString = "395978176.12348"
+         timestampString = "397415969.562232"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "571"
-         endingLineNumber = "571"
+         startingLineNumber = "567"
+         endingLineNumber = "567"
          landmarkName = "-cordovaGetWaveFormData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ModusModPlayer/Plugins/ModPlyr/ModPlyr.m"
-         timestampString = "395978176.12348"
+         timestampString = "397415969.562232"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "580"
-         endingLineNumber = "580"
+         startingLineNumber = "576"
+         endingLineNumber = "576"
          landmarkName = "-cordovaGetWaveFormData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ModusModPlayer/Plugins/ModPlyr/ModPlyr.m"
-         timestampString = "395978176.12348"
+         timestampString = "397415969.562232"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "550"
-         endingLineNumber = "550"
+         startingLineNumber = "547"
+         endingLineNumber = "547"
          landmarkName = "-cordovaGetWaveFormData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -196,6 +196,19 @@
          startingLineNumber = "48"
          endingLineNumber = "48"
          landmarkName = "-getFilesInDirectory:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ModusModPlayer/Plugins/ModPlyr/ModPlyr.m"
+         timestampString = "397415969.562232"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "417"
+         endingLineNumber = "417"
+         landmarkName = "-getFileData:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

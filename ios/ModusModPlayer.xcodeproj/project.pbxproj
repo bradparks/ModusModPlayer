@@ -46,6 +46,7 @@
 		5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEE5B34173C68D80009041E /* CoreLocation.framework */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		71027CAD1794498F003A61C1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71027CAC1794498F003A61C1 /* Accelerate.framework */; };
+		710FD8B417AC140D0061FD62 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 710FD8B317AC140D0061FD62 /* libc++.dylib */; };
 		716935E41784A68A00047434 /* libbass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 716935E11784A68A00047434 /* libbass.a */; };
 		716935E51784A68A00047434 /* ModPlyr.m in Sources */ = {isa = PBXBuildFile; fileRef = 716935E31784A68A00047434 /* ModPlyr.m */; };
 		719E849A1799DBFF00CE6C52 /* libmodplug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 719E84991799DBFF00CE6C52 /* libmodplug.a */; };
@@ -116,6 +117,7 @@
 		5AEE5B34173C68D80009041E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		71027CAC1794498F003A61C1 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		710FD8B317AC140D0061FD62 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		716935E01784A68A00047434 /* bass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bass.h; sourceTree = "<group>"; };
 		716935E11784A68A00047434 /* libbass.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbass.a; sourceTree = "<group>"; };
 		716935E21784A68A00047434 /* ModPlyr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModPlyr.h; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				719E849A1799DBFF00CE6C52 /* libmodplug.a in Frameworks */,
+				710FD8B417AC140D0061FD62 /* libc++.dylib in Frameworks */,
 				71027CAD1794498F003A61C1 /* Accelerate.framework in Frameworks */,
 				301BF5BF109A6A2B0062928A /* CoreLocation.framework in Frameworks */,
 				5AA0E66F1729F460000DC89A /* ImageIO.framework in Frameworks */,
@@ -154,6 +156,7 @@
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */,
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
+				719E849A1799DBFF00CE6C52 /* libmodplug.a in Frameworks */,
 				716935E41784A68A00047434 /* libbass.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +204,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				710FD8B317AC140D0061FD62 /* libc++.dylib */,
 				71027CAC1794498F003A61C1 /* Accelerate.framework */,
 				71E7892E1784CAE00000BA2B /* mods */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
@@ -515,8 +519,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -530,6 +537,7 @@
 					"\"$(SRCROOT)/ModusModPlayer/Plugins/ModPlyr\"",
 					/Users/jgarcia/Documents/Mod_music_projects,
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ModusModPlayer;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -539,8 +547,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ModusModPlayer/ModusModPlayer-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -552,6 +563,7 @@
 					"\"$(SRCROOT)/ModusModPlayer/Plugins/ModPlyr\"",
 					/Users/jgarcia/Documents/Mod_music_projects,
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ModusModPlayer;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -578,6 +590,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,

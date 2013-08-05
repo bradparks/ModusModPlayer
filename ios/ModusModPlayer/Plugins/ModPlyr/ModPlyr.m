@@ -338,95 +338,92 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];    
 }
 
-
-
-//- (char*) getFileData:(const char*)filename withSize:(long*)size {
-//    FILE *f;
-//    char *data;
-//
-//    f = fopen(filename, "rb");
-//    if (f == NULL) {
-//      return NULL;
-//    }
-//    fseek(f, 0L, SEEK_END);
-//    (*size) = ftell(f);
-//    rewind(f);
-//    
-//    data = (char*)malloc(*size);
-//    fread(data, *size, sizeof(char), f);
-//    fclose(f);
-//
-//    return(data);
-//}
-
 - (void) cordovaLoadModNew:(CDVInvokedUrlCommand*) command {
-//    long *size = NULL;
-//    char *d;
-//    
-//    
-//    
-//    
-//    
-//    ModPlug_Settings settings;
-//    ModPlug_GetSettings(&settings);
-//    settings.mResamplingMode = MODPLUG_RESAMPLE_FIR; /* RESAMP */
-//    settings.mChannels = 2;
-//    settings.mBits = 16;
-//    settings.mFrequency = 44100;
-//    
-//    /* insert more setting changes here */
-//    ModPlug_SetSettings(&settings);
-//    
-//    
-//    NSString *file = [command.arguments objectAtIndex:0];
-//    ModPlugFile *f2;
-//    
-//    d = [self getFileData:[file UTF8String] withSize:size];
-//    
-//    f2 = ModPlug_Load(d, *size);
-//
-////    currentModFile = BASS_MusicLoad(FALSE, [file UTF8String],0,0,BASS_SAMPLE_LOOP|BASS_MUSIC_RAMPS|BASS_MUSIC_PRESCAN,1);
-//
-////    int errNo = BASS_ErrorGetCode();
-//    
-//  
-//    NSDictionary *jsonObj;
-//        
-//    if (! f2) {
-//        NSLog(@"Could not load file: %@", file);
-//        
-//        
-//        jsonObj = [[NSDictionary alloc]
-//                initWithObjectsAndKeys:
-//                    @"false", @"success",
-//                    nil
-//                ];
-//        
-//    }
-//    else {
-////        NSString *songName = [[NSString alloc] initWithCString: BASS_ChannelGetTags(currentModFile,BASS_TAG_MUSIC_NAME)];
-//    
-//        NSString *songName = @"BLAH";
-////        NSLog(@"PLAYING : %s", BASS_ChannelGetTags(currentModFile, BASS_TAG_MUSIC_NAME));
-//        
-//        // This needs to be moved to a separate method;
-//        jsonObj = [[NSDictionary alloc]
-//                initWithObjectsAndKeys:
-//                    @"true", @"success",
-//                    songName, @"songName",
-//                    nil
-//                ];
-//    }
-//
-//
-//     
-//    CDVPluginResult *pluginResult = [CDVPluginResult
-//                                        resultWithStatus:CDVCommandStatus_OK
-//                                        messageAsDictionary:jsonObj
-//                                    ];
-//    
-//    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    long *size = NULL;
+    
+    unsigned char *d;
+    
+    
+    ModPlug_Settings settings;
+    ModPlug_GetSettings(&settings);
+    settings.mResamplingMode = MODPLUG_RESAMPLE_FIR; /* RESAMP */
+    settings.mChannels = 2;
+    settings.mBits = 16;
+    settings.mFrequency = 44100;
+    
+    /* insert more setting changes here */
+    ModPlug_SetSettings(&settings);
+    
+    
+    NSString *file = [command.arguments objectAtIndex:0];
+    ModPlugFile *f2;
+    
+    d = [self getFileData:[file UTF8String]];
+    
+    f2 = ModPlug_Load(d, *size);
+  
+    NSDictionary *jsonObj;
+        
+    if (! f2) {
+        NSLog(@"Could not load file: %@", file);
+        
+        
+        jsonObj = [[NSDictionary alloc]
+                initWithObjectsAndKeys:
+                    @"false", @"success",
+                    nil
+                ];
+        
+    }
+    else {
+//        NSString *songName = [[NSString alloc] initWithCString: BASS_ChannelGetTags(currentModFile,BASS_TAG_MUSIC_NAME)];
+    
+        NSString *songName = @"BLAH";
+//        NSLog(@"PLAYING : %s", BASS_ChannelGetTags(currentModFile, BASS_TAG_MUSIC_NAME));
+        
+        // This needs to be moved to a separate method;
+        jsonObj = [[NSDictionary alloc]
+                initWithObjectsAndKeys:
+                    @"true", @"success",
+                    songName, @"songName",
+                    nil
+                ];
+    }
+
+
+     
+    CDVPluginResult *pluginResult = [CDVPluginResult
+                                        resultWithStatus:CDVCommandStatus_OK
+                                        messageAsDictionary:jsonObj
+                                    ];
+    
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
+
+
+
+
+- (unsigned char*) getFileData:(const char*)filename  {
+    FILE *f;
+    unsigned char *data;
+    long *size;
+
+    f = fopen(filename, "rb");
+    if (f == NULL) {
+      return NULL;
+    }
+    fseek(f, 0L, SEEK_END);
+    
+    size = ftell(f);
+    rewind(f);
+    
+    data = (char*)malloc(*size);
+    fread(data, *size, sizeof(char), f);
+    fclose(f);
+
+    return(data);
+}
+
 
 
 
@@ -530,14 +527,14 @@
 
 
         NSString *nsPattern  = [NSString  stringWithFormat:@"%03u", LOWORD(pos)];
-        NSString *nsRow  = [NSString  stringWithFormat:@"%03u", HIWORD(pos)];
+        NSString *nsRow      = [NSString  stringWithFormat:@"%03u", HIWORD(pos)];
         NSNumber *nsLevel    = [[NSNumber alloc] initWithInt:level];
         NSNumber *nsTime     = [[NSNumber alloc] initWithInt:time];
         NSNumber *nsCpu      = [[NSNumber alloc] initWithFloat: cpu];
         NSNumber *nsBuf      = [[NSNumber alloc] initWithFloat: *buf];
         
         
-        NSInteger *canvasWidth = (NSInteger *)[command.arguments objectAtIndex:0];
+        NSInteger *canvasWidth  = (NSInteger *)[command.arguments objectAtIndex:0];
         NSInteger *canvasHeight = (NSInteger *)[command.arguments objectAtIndex:1];
 
 //        NSLog(@"CanvasSize %@x%@", canvasWidth, canvasHeight);
@@ -552,7 +549,6 @@
         }
         else if ([wavDataType isEqual:@"spectrum"]) {
 //            NSLog(@"%@", wavDataType);
-
             wavData = [self getSpectrumData];
 
         }

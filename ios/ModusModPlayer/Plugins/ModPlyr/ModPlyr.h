@@ -38,6 +38,8 @@
 - (void) cordovaLoadMod;
 // cordovaLoadModNew is for the libModPlug 
 - (void) cordovaLoadModNew;
+- (void) cordovaPlayModNew;
+
 - (void) cordovaPlayMod;
 - (void) cordovaStopMusic;
 - (void) cordvoaGetWaveFormData;

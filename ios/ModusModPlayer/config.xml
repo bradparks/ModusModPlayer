@@ -32,8 +32,8 @@
 
     <access origin="*"/>
 
-    <!-- <content src="http://mmp/index.html" /> -->
-    <content src="index.html" />
+    <content src="http://mmp/index.html" />
+    <!-- <content src="index.html" /> -->
 
     <!-- Preferences for iOS -->
     <preference name="AllowInlineMediaPlayback" value="false" />

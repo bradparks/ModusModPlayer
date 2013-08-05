@@ -152,7 +152,7 @@ Ext.define('MMP.controller.Main', {
                 callback('Nothing to echo');
             },
             'ModPlyr',
-            'cordovaLoadMod',
+            'cordovaLoadModNew',
             [data.path]
         );
 
